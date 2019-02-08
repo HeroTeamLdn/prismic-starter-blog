@@ -1,0 +1,53 @@
+{
+  "Main": {
+    "uid": {
+      "type": "UID",
+      "config": {
+        "label": "UID",
+        "placeholder": "Home Page"
+      }
+    },
+    "page_title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+        "label": "Page Title",
+        "placeholder": "e.g. L'Elite Dating"
+      }
+    },
+    "body": {
+      "type": "Slices",
+      "fieldset": "Slice zone",
+      "config": {
+        "choices": {}
+      }
+    }
+  },
+  "SEO": {
+    "meta_title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1",
+        "label": "meta_title"
+      }
+    },
+    "meta_desc": {
+      "type": "StructuredText",
+      "config": {
+        "single": "paragraph",
+        "label": "meta_desc"
+      }
+    },
+    "og_image": {
+      "type": "Image",
+      "config": {
+        "constraint": {
+          "width": 1200,
+          "height": 630
+        },
+        "thumbnails": [],
+        "label": "og_image"
+      }
+    }
+  }
+}

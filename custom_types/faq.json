@@ -1,0 +1,54 @@
+{
+  "Main": {
+    "uid": {
+      "type": "UID",
+      "config": {
+        "label": "UID",
+        "placeholder": "e.g. membership-cost"
+      }
+    },
+    "question": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading2",
+        "label": "Question",
+        "placeholder": "e.g. How much does membership cost?"
+      }
+    },
+    "answer": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph, preformatted, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item",
+        "label": "Answer",
+        "placeholder": "e.g. We offer very competitive rates for our exclusive service. Find out more on our Subscription Page"
+      }
+    }
+  },
+  "SEO": {
+    "meta_title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1",
+        "label": "meta_title"
+      }
+    },
+    "meta_desc": {
+      "type": "StructuredText",
+      "config": {
+        "single": "paragraph",
+        "label": "meta_desc"
+      }
+    },
+    "og_image": {
+      "type": "Image",
+      "config": {
+        "constraint": {
+          "width": 1200,
+          "height": 630
+        },
+        "thumbnails": [],
+        "label": "og_image"
+      }
+    }
+  }
+}

@@ -1,0 +1,178 @@
+{
+  "Main": {
+    "uid": {
+      "type": "UID",
+      "config": {
+        "label": "UID",
+        "placeholder": "e.g. blog_post_title"
+      }
+    },
+    "main_image": {
+      "type": "Image",
+      "config": {
+        "constraint": {
+          "width": 1600,
+          "height": 900
+        },
+        "thumbnails": [
+          {
+            "name": "small",
+            "width": 600,
+            "height": 900
+          },
+          {
+            "name": "thumb",
+            "width": 270,
+            "height": 270
+          }
+        ],
+        "label": "Main Image"
+      }
+    },
+    "title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1",
+        "label": "Title"
+      }
+    },
+    "sub_title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading2",
+        "label": "Sub Title"
+      }
+    },
+    "standfirst": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph",
+        "label": "standfirst",
+        "placeholder": "Enter introductory copy here"
+      }
+    },
+    "author_link": {
+      "type": "Link",
+      "config": {
+        "select": "document",
+        "customtypes": ["author"],
+        "label": "Author Link",
+        "placeholder": "Select Author"
+      }
+    },
+    "body": {
+      "type": "Slices",
+      "fieldset": "Slice zone",
+      "config": {
+        "choices": {
+          "text": {
+            "type": "Slice",
+            "fieldset": "Text",
+            "description": "Rich Text Section",
+            "icon": "text_fields",
+            "non-repeat": {
+              "text": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
+                  "label": "text",
+                  "placeholder": "Your content here"
+                }
+              }
+            },
+            "repeat": {}
+          },
+          "banner_with_caption": {
+            "type": "Slice",
+            "fieldset": "Banner with caption",
+            "description": "Banner with caption and button",
+            "icon": "chrome_reader_mode",
+            "non-repeat": {
+              "image_banner": {
+                "type": "Image",
+                "config": {
+                  "constraint": {
+                    "width": 1089,
+                    "height": 613
+                  },
+                  "thumbnails": [
+                    {
+                      "name": "small",
+                      "width": 600,
+                      "height": 900
+                    },
+                    {
+                      "name": "medium",
+                      "width": 800,
+                      "height": 450
+                    }
+                  ],
+                  "label": "Image Banner"
+                }
+              },
+              "title_of_banner": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "heading2",
+                  "label": "Title Of banner",
+                  "placeholder": "My title of banner"
+                }
+              },
+              "description": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph",
+                  "label": "Description",
+                  "placeholder": "My description"
+                }
+              },
+              "button_label": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
+                  "label": "Button label",
+                  "placeholder": "Click Here"
+                }
+              },
+              "button_link": {
+                "type": "Link",
+                "config": {
+                  "label": "Button Link",
+                  "placeholder": "Select the link"
+                }
+              }
+            },
+            "repeat": {}
+          }
+        }
+      }
+    }
+  },
+  "SEO": {
+    "meta_title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1",
+        "label": "meta_title"
+      }
+    },
+    "meta_desc": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
+        "label": "meta_desc"
+      }
+    },
+    "og_image": {
+      "type": "Image",
+      "config": {
+        "constraint": {
+          "width": 1200,
+          "height": 630
+        },
+        "thumbnails": [],
+        "label": "og_image"
+      }
+    }
+  }
+}

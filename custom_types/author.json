@@ -1,0 +1,38 @@
+{
+  "Main": {
+    "uid": {
+      "type": "UID",
+      "config": {
+        "label": "UID",
+        "placeholder": "e.g. karen-smith"
+      }
+    },
+    "name": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1",
+        "label": "Name",
+        "placeholder": "e.g Karen Smith"
+      }
+    },
+    "photo": {
+      "type": "Image",
+      "config": {
+        "constraint": {
+          "width": 400,
+          "height": 400
+        },
+        "thumbnails": [],
+        "label": "Photo"
+      }
+    },
+    "role": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph",
+        "label": "Role",
+        "placeholder": "e.g. Marketing Director"
+      }
+    }
+  }
+}
