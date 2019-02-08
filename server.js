@@ -13,7 +13,7 @@ app
 
     server.get('/blog/:uid', (req, res) => {
       const params = { uid: req.params.uid };
-      app.render(req, res, '/blogpost', params);
+      app.render(req, res, '/blogPost', params);
     });
 
     server.get('/privacy-policy', (req, res) => {

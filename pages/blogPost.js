@@ -15,9 +15,14 @@ Blogpost.getInitialProps = async ({ query }) => {
   console.log(query);
   let api = await getPrismicApi();
 
-  let data = await api.getByUID('blog_post', query.uid);
+  let response = await api.getByUID('blog_post', query.uid);
 
-  return { ...data };
+  if (response) {
+    return { ...response };
+  } else {
+    console.log('no data from prismic');
+    return {};
+  }
 };
 
 export default Blogpost;

@@ -14,11 +14,14 @@ const Index = withRouter(
 Index.getInitialProps = async ({ query }) => {
   let api = await getPrismicApi();
 
-  let data = await api.getByUID('basic_page', query.uid);
+  let response = await api.getByUID('basic_page', query.uid);
 
-  console.log(data);
-
-  return { ...data };
+  if (response.data) {
+    return { ...response };
+  } else {
+    console.log('no data from prismic');
+    return {};
+  }
 };
 
 export default Index;
