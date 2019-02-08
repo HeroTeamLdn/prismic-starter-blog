@@ -7,31 +7,44 @@ import Layout from '../components/Layout';
 
 const Blog = ({ page_title, entries }) => (
   <Layout>
-    {RichText.render(page_title)}
-    {entries.map(({ uid, data: { title } }) => (
-      <div className="blog">
-        <Link as={`/blog/${uid}`} href={`blogpost?uid=${uid}`}>
-          {RichText.render(title)}
-        </Link>
-      </div>
-    ))}
+    {page_title && RichText.render(page_title)}
+    {entries &&
+      entries.map(({ uid, data: { title } }) => (
+        <div className="blog">
+          <Link as={`/blog/${uid}`} href={`blogpost?uid=${uid}`}>
+            {RichText.render(title)}
+          </Link>
+        </div>
+      ))}
   </Layout>
 );
 
 Blog.getInitialProps = async () => {
   let api = await getPrismicApi();
 
-  let { data } = await api.getSingle('blog');
+  let pageResponse = await api.getSingle('blog');
 
-  let { results: entries } = await api.query(
+  let postsResponse = await api.query(
     Predicates.at('document.type', 'blog_post'),
     {
       orderings: '[my.blog_post.date desc]'
     }
   );
 
-  // console.log(entries);
-  return { ...data, entries };
+  if (pageResponse && postsResponse.results.length > 0) {
+    let { results: entries } = postsResponse;
+    return { ...pageResponse.data, entries };
+  } else if (postsResponse.results.length > 0) {
+    console.log('no page data from prismic');
+    let { results: entries } = postsResponse;
+    return { entries };
+  } else if (pageResponse) {
+    console.log('no posts data from prismic');
+    return { ...pageResponse.data };
+  } else {
+    console.log('no data from prismic');
+    return {};
+  }
 };
 
 export default Blog;

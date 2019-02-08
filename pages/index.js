@@ -4,7 +4,7 @@ import { asText, getPrismicApi, RichTextField } from '../utils/prismic';
 import Layout from '../components/Layout';
 
 const Index = ({ page_title }) => (
-  <Layout>{page_title && RichText.render(data.page_title)}</Layout>
+  <Layout>{page_title && RichText.render(page_title)}</Layout>
 );
 
 Index.getInitialProps = async () => {
